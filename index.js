@@ -4,6 +4,7 @@ let colorInput = document.getElementById("color-change");
 const box = document.querySelector(".painter");
 const rainbow = document.getElementById("rainbow");
 const colorMode = document.getElementById("color-mode");
+const clear = document.getElementById("clear");
 const sketcher_size = sketcher.offsetHeight;
 let penOn = false;
 let currentMode = "color";
@@ -19,6 +20,15 @@ erase.addEventListener("mousedown", function () {
 colorMode.addEventListener("mousedown", function () {
   currentMode = "color";
 });
+clear.addEventListener("mousedown", function () {
+  clear.addEventListener("mousedown", function () {
+    // Loop through all boxes and set their background color to the default color
+    document.querySelectorAll(".painter").forEach(function (box) {
+      box.style.backgroundColor = "#a19f9f";
+    });
+  });
+});
+
 function TogalMode() {
   switch (currentMode) {
     case "color":
