@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0; /* Remove default margin */
+  font-family: "Arial", sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Viewport height */
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.sketcher {
+  background-color: #ffffff;
+  border: 1px solid black;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+.painter {
+  border: 0px solid black;
+}
