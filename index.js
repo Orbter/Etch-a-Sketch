@@ -1,15 +1,24 @@
 const sketcher = document.getElementById("sketcher");
-const sketcher_size = sketcher.offsetHeight;
+const erase = document.getElementById("erase");
 let colorInput = document.getElementById("color-change");
-let penOn = false;
 const box = document.querySelector(".painter");
 const rainbow = document.getElementById("rainbow");
+const colorMode = document.getElementById("color-mode");
+const sketcher_size = sketcher.offsetHeight;
+let penOn = false;
 let currentMode = "color";
+
 CreatBox(16, 16);
-rainbow.addEventListener("click", function () {
+
+rainbow.addEventListener("mousedown", function () {
   currentMode = "rainbow";
 });
-
+erase.addEventListener("mousedown", function () {
+  currentMode = "erase";
+});
+colorMode.addEventListener("mousedown", function () {
+  currentMode = "color";
+});
 function TogalMode() {
   switch (currentMode) {
     case "color":
@@ -18,6 +27,8 @@ function TogalMode() {
     case "rainbow":
       currentMode = "rainbow";
       break;
+    case "erase":
+      currentMode = "erase";
   }
 }
 
@@ -27,9 +38,9 @@ function ChangeColor() {
       return colorInput.value;
     case "rainbow":
       return rainbowColor();
+    case "erase":
+      return "#a19f9f";
   }
-  console.log(colorInput.value);
-  return colorInput.value;
 }
 function rainbowColor() {
   // Generate random values for red, green, and blue components
