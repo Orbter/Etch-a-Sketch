@@ -5,11 +5,41 @@ const box = document.querySelector(".painter");
 const rainbow = document.getElementById("rainbow");
 const colorMode = document.getElementById("color-mode");
 const clear = document.getElementById("clear");
+const scrollbar = document.getElementById("scrollbar");
+const sizeChange = document.getElementById("size-change");
+const numberChange = document.getElementById("scrollbar-number");
+const errorMessge = document.getElementById("error-message");
 const sketcher_size = sketcher.offsetHeight;
 let penOn = false;
+let numberOfBoxex;
 let currentMode = "color";
+// Check if numberOfBoxex is NaN
+if (isNaN(numberOfBoxex)) {
+  numberOfBoxex = 16; // Set a default value
+}
 
-CreatBox(16, 16);
+numberChange.addEventListener("input", function () {
+  numberChange.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+      const inputValue = Number(numberChange.value);
+      if (inputValue >= 2 && inputValue <= 64) {
+        numberOfBoxex = inputValue;
+        creatBox(numberOfBoxex, numberOfBoxex);
+        sizeChange.textContent = inputValue;
+        errorMessge.textContent = "";
+        scrollbar.value = inputValue;
+      } else {
+        errorMessge.textContent = "Type a number between 2 and 64";
+      }
+    }
+  });
+});
+
+scrollbar.addEventListener("input", function () {
+  sizeChange.textContent = scrollbar.value;
+  numberOfBoxex = Number(scrollbar.value);
+  creatBox(numberOfBoxex, numberOfBoxex);
+});
 
 rainbow.addEventListener("mousedown", function () {
   currentMode = "rainbow";
@@ -20,12 +50,11 @@ erase.addEventListener("mousedown", function () {
 colorMode.addEventListener("mousedown", function () {
   currentMode = "color";
 });
+
 clear.addEventListener("mousedown", function () {
-  clear.addEventListener("mousedown", function () {
-    // Loop through all boxes and set their background color to the default color
-    document.querySelectorAll(".painter").forEach(function (box) {
-      box.style.backgroundColor = "#a19f9f";
-    });
+  // Loop through all boxes and set their background color to the default color
+  document.querySelectorAll(".painter").forEach(function (box) {
+    box.style.backgroundColor = "#a19f9f";
   });
 });
 
@@ -42,6 +71,7 @@ function TogalMode() {
   }
 }
 
+creatBox(numberOfBoxex, numberOfBoxex);
 function ChangeColor() {
   switch (currentMode) {
     case "color":
@@ -63,7 +93,15 @@ function rainbowColor() {
 
   return randomColor;
 }
-function CreatBox(row, column) {
+function clearSketcher() {
+  while (sketcher.firstChild) {
+    sketcher.removeChild(sketcher.firstChild);
+  }
+}
+
+function creatBox(row, column) {
+  clearSketcher();
+
   for (let index = 0; index < row * column; index++) {
     let box = document.createElement("div");
     box.className = "painter";

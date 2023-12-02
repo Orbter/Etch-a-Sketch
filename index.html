@@ -16,9 +16,21 @@
         <button id="rainbow">Rainbow Mode!</button>
         <button id="erase">Erase</button>
         <button id="clear">Clear</button>
-        <div id="size-change">change size</div>
-        <div id="scroll-bar">------</div>
-        <div id="size-input">"box"</div>
+        <div class="scrollbar-all flex">
+          <div id="size-change">16</div>
+          <div class="scrollbar-settings flex">
+            <input
+              type="range"
+              id="scrollbar"
+              value="16"
+              min="2"
+              max="64"
+              step="1"
+            />
+            <input type="text" id="scrollbar-number" />
+          </div>
+          <div id="error-message"></div>
+        </div>
       </div>
       <div class="sketcher flex" id="sketcher"></div>
     </div>
