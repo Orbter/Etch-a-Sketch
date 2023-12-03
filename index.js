@@ -10,6 +10,7 @@ const sizeChange = document.getElementById("size-change");
 const numberChange = document.getElementById("scrollbar-number");
 const errorMessge = document.getElementById("error-message");
 const settings = document.getElementById("settings");
+const headline = document.getElementById("headline");
 let sketcher_size = sketcher.offsetHeight;
 let penOn = false;
 let numberOfBoxex;
@@ -138,6 +139,28 @@ function creatBox(row, column) {
 }
 function lightOrDark() {
   if (light_dark === "dark") {
+    colorInput.style.backgroundColor = "rgb(222, 214, 206)";
     document.body.style.backgroundColor = "rgb(238, 234, 230)";
+    settings.style.backgroundColor = "rgb(222, 214, 206)";
+    headline.style.color = "black";
+    const allButtons = document.querySelectorAll(".button-settings");
+    allButtons.forEach(function (button) {
+      button.style.backgroundColor = "rgb(222, 214, 206)";
+      button.style.color = "black";
+      button.style.borderColor = "black";
+    });
+    light_dark = "light";
+  } else {
+    headline.style.color = "white";
+    colorInput.style.backgroundColor = "rgb(46, 52, 64)";
+    document.body.style.backgroundColor = "rgb(59, 66, 82)";
+    settings.style.backgroundColor = "rgb(46, 52, 64)";
+    const allButtons = document.querySelectorAll(".button-settings");
+    allButtons.forEach(function (button) {
+      button.style.backgroundColor = "rgb(46, 52, 64)";
+      button.style.color = "white";
+      button.style.borderColor = "white";
+    });
+    light_dark = "dark";
   }
 }

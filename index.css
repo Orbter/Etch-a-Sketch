@@ -10,7 +10,6 @@ h1 {
   text-align: center;
   margin: 0px;
   padding: 32px;
-  background-color: rgb(238, 234, 230);
 }
 
 .main-page {
@@ -105,7 +104,14 @@ h1 {
 }
 .scrollbar-settings {
   flex-direction: row;
+  align-items: center; /* Optional: Align items vertically in the center */
 }
+
 #scrollbar-number {
+  width: 55px; /* Adjust the width as needed */
+  margin-left: 5px; /* Add some margin for spacing */
+}
+.light-and_dark {
   width: 100px;
+  height: 100px;
 }
