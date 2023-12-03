@@ -11,7 +11,6 @@ h1 {
   margin: 0px;
   padding: 32px;
   background-color: rgb(238, 234, 230);
-  padding-bottom: 70px;
 }
 
 .main-page {
@@ -74,4 +73,39 @@ h1 {
   padding: 0px;
   background-color: rgb(222, 214, 206);
   cursor: pointer;
+}
+
+#color-change::-webkit-color-swatch {
+  border-radius: 50%;
+}
+
+#color-change::-webkit-color-swatch {
+  border-radius: 50%;
+}
+#scrollbar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100px;
+  height: 15px;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgb(47, 45, 45);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+#scrollbar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #1e6ce8;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #333;
+  box-shadow: -407px 0 0 400px #1e6ce8;
+}
+.scrollbar-settings {
+  flex-direction: row;
+}
+#scrollbar-number {
+  width: 100px;
 }
