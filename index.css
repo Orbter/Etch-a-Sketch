@@ -10,6 +10,9 @@ h1 {
   text-align: center;
   margin: 0px;
   padding: 32px;
+  font-weight: bold;
+  font-size: 45px;
+  font-family: "Rubik", sans-serif;
 }
 
 .main-page {
@@ -46,6 +49,7 @@ h1 {
   cursor: pointer;
   background-color: rgb(222, 214, 206);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-family: "Poppins", sans-serif;
 }
 .scrollbar-all {
   margin-top: 50px;
@@ -122,4 +126,9 @@ h1 {
   background-color: rgb(47, 45, 45);
   color: white;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-family: "Poppins", sans-serif;
+}
+#size-change {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
 }
