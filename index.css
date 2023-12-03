@@ -66,8 +66,8 @@ h1 {
   width: 70px;
   height: 70px;
   border: none;
-  padding: 0;
+  padding: 0px;
   background-color: rgb(222, 214, 206);
-  border-radius: 50%; /* Specify the border-radius value */
+  border-radius: px;
   cursor: pointer;
 }

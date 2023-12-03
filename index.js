@@ -14,6 +14,9 @@ let penOn = false;
 let numberOfBoxex;
 let currentMode = "color";
 // Check if numberOfBoxex is NaN
+if (isNaN(numberOfBoxex)) {
+  numberOfBoxex = 16; // Set a default value
+}
 
 numberChange.addEventListener("input", function () {
   numberChange.addEventListener("keydown", function (event) {
