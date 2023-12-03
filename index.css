@@ -3,33 +3,71 @@ body {
   flex-direction: column;
   margin: 0; /* Remove default margin */
   font-family: "Arial", sans-serif;
+  background-color: rgb(238, 234, 230);
 }
 
 h1 {
   text-align: center;
+  margin: 0px;
+  padding: 32px;
+  background-color: rgb(238, 234, 230);
 }
 
 .main-page {
   display: flex;
   flex-direction: row;
   height: 100vh; /* Viewport height */
+  justify-content: space-between;
 }
 
 .settings {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f0f0f0;
+  background-color: rgb(222, 214, 206);
   padding: 10px;
+  padding-top: 200px;
 }
 
 .sketcher {
-  background-color: #a19f9f;
-  width: 500px;
-  height: 500px;
+  background-color: #ffffff;
+  width: 600px;
+  height: 600px;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
-.painter {
+
+.button-settings {
+  margin-top: 25px;
+  border-width: 3px;
+  border-radius: 5px;
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+  background-color: rgb(222, 214, 206);
+}
+.scrollbar-all {
+  margin-top: 50px;
+}
+.main-body {
+  padding-right: 100px;
+}
+.light-and_dark {
+  justify-content: end;
+  align-items: end;
+}
+.custom-color {
+  background-color: rgb(47, 45, 45);
+  color: #ffffff;
+}
+
+#color-change {
+  width: 70px;
+  height: 70px;
+  border: none;
+  padding: 0;
+  background-color: rgb(222, 214, 206);
+  border-radius: 50%; /* Specify the border-radius value */
+  cursor: pointer;
 }

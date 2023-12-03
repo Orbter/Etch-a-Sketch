@@ -9,14 +9,11 @@ const scrollbar = document.getElementById("scrollbar");
 const sizeChange = document.getElementById("size-change");
 const numberChange = document.getElementById("scrollbar-number");
 const errorMessge = document.getElementById("error-message");
-const sketcher_size = sketcher.offsetHeight;
+let sketcher_size = sketcher.offsetHeight;
 let penOn = false;
 let numberOfBoxex;
 let currentMode = "color";
 // Check if numberOfBoxex is NaN
-if (isNaN(numberOfBoxex)) {
-  numberOfBoxex = 16; // Set a default value
-}
 
 numberChange.addEventListener("input", function () {
   numberChange.addEventListener("keydown", function (event) {
@@ -34,6 +31,17 @@ numberChange.addEventListener("input", function () {
     }
   });
 });
+
+function buttonsColor(clickedButton) {
+  // Remove 'custom-color' class from all buttons
+  const allButtons = document.querySelectorAll(".button-settings");
+  allButtons.forEach(function (button) {
+    button.classList.remove("custom-color");
+  });
+
+  // Add 'custom-color' class to the clicked button
+  clickedButton.classList.add("custom-color");
+}
 
 scrollbar.addEventListener("input", function () {
   sizeChange.textContent = scrollbar.value;
@@ -54,7 +62,7 @@ colorMode.addEventListener("mousedown", function () {
 clear.addEventListener("mousedown", function () {
   // Loop through all boxes and set their background color to the default color
   document.querySelectorAll(".painter").forEach(function (box) {
-    box.style.backgroundColor = "#a19f9f";
+    box.style.backgroundColor = "#ffffff";
   });
 });
 
@@ -79,7 +87,7 @@ function ChangeColor() {
     case "rainbow":
       return rainbowColor();
     case "erase":
-      return "#a19f9f";
+      return "#ffffff";
   }
 }
 function rainbowColor() {
@@ -101,7 +109,7 @@ function clearSketcher() {
 
 function creatBox(row, column) {
   clearSketcher();
-
+  sketcher_size = sketcher.offsetHeight;
   for (let index = 0; index < row * column; index++) {
     let box = document.createElement("div");
     box.className = "painter";
