@@ -45,12 +45,12 @@ h1 {
   height: 40px;
   cursor: pointer;
   background-color: rgb(222, 214, 206);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 .scrollbar-all {
   margin-top: 50px;
 }
 .main-body {
-  padding-right: 100px;
 }
 .light-and_dark {
   justify-content: end;
@@ -109,9 +109,17 @@ h1 {
 
 #scrollbar-number {
   width: 55px; /* Adjust the width as needed */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
   margin-left: 5px; /* Add some margin for spacing */
 }
+
 .light-and_dark {
+  margin: 32px;
   width: 100px;
-  height: 100px;
+  height: 50px;
+  border-radius: 40px;
+  background-color: rgb(47, 45, 45);
+  color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }

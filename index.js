@@ -137,30 +137,45 @@ function creatBox(row, column) {
     sketcher.appendChild(box);
   }
 }
-function lightOrDark() {
+function lightOrDark(element_button) {
+  const buttons = document.querySelectorAll(".button-settings");
+
   if (light_dark === "dark") {
-    colorInput.style.backgroundColor = "rgb(222, 214, 206)";
+    // Light Mode
     document.body.style.backgroundColor = "rgb(238, 234, 230)";
     settings.style.backgroundColor = "rgb(222, 214, 206)";
     headline.style.color = "black";
-    const allButtons = document.querySelectorAll(".button-settings");
-    allButtons.forEach(function (button) {
+
+    colorInput.style.backgroundColor = "rgb(222, 214, 206)";
+
+    buttons.forEach(function (button) {
       button.style.backgroundColor = "rgb(222, 214, 206)";
       button.style.color = "black";
       button.style.borderColor = "black";
     });
+
     light_dark = "light";
   } else {
-    headline.style.color = "white";
-    colorInput.style.backgroundColor = "rgb(46, 52, 64)";
+    // Dark Mode
     document.body.style.backgroundColor = "rgb(59, 66, 82)";
     settings.style.backgroundColor = "rgb(46, 52, 64)";
-    const allButtons = document.querySelectorAll(".button-settings");
-    allButtons.forEach(function (button) {
+    headline.style.color = "white";
+
+    colorInput.style.backgroundColor = "rgb(46, 52, 64)";
+
+    buttons.forEach(function (button) {
       button.style.backgroundColor = "rgb(46, 52, 64)";
       button.style.color = "white";
       button.style.borderColor = "white";
     });
+
     light_dark = "dark";
+  }
+
+  if (element_button) {
+    element_button.style.backgroundColor =
+      light_dark === "light" ? "rgb(47, 45, 45)" : "rgb(21 54 219)";
+    element_button.style.borderColor =
+      light_dark === "light" ? "rgb((47, 45, 45)" : "rgb(21 54 219)";
   }
 }
