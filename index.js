@@ -174,8 +174,8 @@ function lightOrDark(element_button) {
 
   if (element_button) {
     element_button.style.backgroundColor =
-      light_dark === "light" ? "rgb(47, 45, 45)" : "rgb(21 54 219)";
+      light_dark === "light" ? "rgb(47, 45, 45)" : "rgb(21, 54, 219)";
     element_button.style.borderColor =
-      light_dark === "light" ? "rgb((47, 45, 45)" : "rgb(21 54 219)";
+      light_dark === "light" ? "rgb(47, 45, 45)" : "rgb(21, 54, 219)";
   }
 }
