@@ -54,15 +54,15 @@ h1 {
 .scrollbar-all {
   margin-top: 50px;
 }
-.main-body {
-}
+
 .light-and_dark {
   justify-content: end;
   align-items: end;
 }
-.custom-color {
-  background-color: rgb(47, 45, 45);
-  color: #ffffff;
+/* Increase specificity for .custom-color class */
+.button-settings.custom-color {
+  background-color: rgb(47, 45, 45) !important;
+  color: #ffffff !important;
 }
 
 #color-change {
