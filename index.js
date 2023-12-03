@@ -9,10 +9,12 @@ const scrollbar = document.getElementById("scrollbar");
 const sizeChange = document.getElementById("size-change");
 const numberChange = document.getElementById("scrollbar-number");
 const errorMessge = document.getElementById("error-message");
+const settings = document.getElementById("settings");
 let sketcher_size = sketcher.offsetHeight;
 let penOn = false;
 let numberOfBoxex;
 let currentMode = "color";
+let light_dark = "light";
 // Check if numberOfBoxex is NaN
 if (isNaN(numberOfBoxex)) {
   numberOfBoxex = 16; // Set a default value
@@ -132,5 +134,10 @@ function creatBox(row, column) {
     });
 
     sketcher.appendChild(box);
+  }
+}
+function lightOrDark() {
+  if (light_dark === "dark") {
+    document.body.style.backgroundColor = "rgb(238, 234, 230)";
   }
 }
